@@ -12,7 +12,7 @@
         $scope.checkInput = function() {
             if ($scope.inputString) {
                 var str = $scope.inputString.split(',').filter(Boolean);
-console.log(str);
+                //console.log(str);
                 if (str.length <= 3) {
                     $scope.outputString = 'Enjoy!';
                 } else {
