@@ -1,30 +1,26 @@
-(function () {
-'use strict';
 
-angular.module('LunchCheck', [])
+(function() {
+    'use strict'
+    angular.module('LunchCheck', [])
+        .controller('LunchCheckController', controllerFn);
 
-.controller('LunchCheckController', function ($scope) {
-  $scope.inputString = "";
-  $scope.outputString = "";
-  $scope.checkInput = function(inputString){
-  	var toOutput = processInput($scope.inputString);	
-};
+    controllerFn.$inject = ['$scope'];
 
-function processInput(string) {
+    function controllerFn($scope) {
+        $scope.outputString = '';
 
-	var str = string.split(',');
-
-	if(str.length==1){
-		$scope.outputString =  "Please enter data first"
-	}
-	else if (str.length<=3){
-		$scope.outputString =  "Enjoy!"
-	}
-	else {
-		$scope.outputString ="To Much! Stop it man!"
-	}
-  }
-});
-
+        $scope.checkInput = function() {
+            if ($scope.inputString) {
+                var str = $scope.inputString.split(',').filter(Boolean);
+console.log(str);
+                if (str.length <= 3) {
+                    $scope.outputString = 'Enjoy!';
+                } else {
+                    $scope.outputString = 'Too much!';
+                }
+            } else {
+                $scope.outputString = 'Please enter data first';
+            }
+        };
+    };
 })();
-
