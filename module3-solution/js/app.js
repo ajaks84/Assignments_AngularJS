@@ -20,14 +20,12 @@ function FoundItemsDirective(){
 NarrowItDownController.$inject = ['MenuSearchService','$timeout'];
 function NarrowItDownController(MenuSearchService,$timeout) {
   var ctrl = this;
-  ctrl.found=[];
-   ctrl.message=null;
+   ctrl.found=[];
     ctrl.getItems = function (searchTerm) {
         if (!searchTerm==""){
         var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
           promise.then(function(response){
             ctrl.found = response;
-          console.log(ctrl.found);
             if (ctrl.found.length == 0) {
                 ctrl.message = "Nothing found"
             }
