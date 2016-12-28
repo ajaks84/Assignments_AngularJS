@@ -50,3 +50,10 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+
+found-items {
+  float: left;
+  margin-top: 30px;
+  clear:left;
+}
+
