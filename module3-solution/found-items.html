@@ -1,10 +1,9 @@
 		
 	<ol>
-				{{message}}
   		<li ng-repeat="item in items">
 		<button ng-click="onRemove({indexItem: $index});">Don't want this one!</button>
 
-   			{{ item.name}},{{ item.short_name}},{{ item.description }} 
+   			{{ item.name}}, {{ item.short_name}}, {{ item.description }} 
    			
   		</li>
 	</ol>

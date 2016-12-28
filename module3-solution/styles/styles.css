@@ -51,7 +51,7 @@ input[type="text"] {
   }
 }
 
-found-items {
+found-items, h3 {
   float: left;
   margin-top: 30px;
   clear:left;
