@@ -26,6 +26,8 @@ function NarrowItDownController(MenuSearchService,$timeout) {
         var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
           promise.then(function(response){
             ctrl.found = response;
+
+            console.log(ctrl.found);
             if (ctrl.found.length == 0) {
                 ctrl.message = "Nothing found"
             }
@@ -54,7 +56,7 @@ function MenuSearchService($http) {
                         })
 // process result and only keep items that match
           .then(function (result) {
-                              var re = new RegExp(searchTerm, 'i');
+                          var re = new RegExp(searchTerm, 'i');
                           for (var i = 0; i < result.data.menu_items.length; i++) {
            if (result.data.menu_items[i].description.match(re)&&searchTerm!=undefined){
             foundItems.push(result.data.menu_items[i]);
