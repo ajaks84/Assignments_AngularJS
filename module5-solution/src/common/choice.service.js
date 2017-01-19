@@ -11,8 +11,6 @@ function ChoiceService() {
 
   service.saveChoice = function (choice) {
     service.choice = choice;
-    console.log("good choice!");
-    console.log(service.choice);
   };
 
   service.getChoice = function () {
@@ -20,7 +18,5 @@ function ChoiceService() {
   };
 
 }
-
-
 
 })();
