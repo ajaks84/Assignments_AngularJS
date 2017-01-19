@@ -1,0 +1,27 @@
+
+  <div ng-show="$ctrl.menuItem" class="container">
+    <div class="col-sm-3">
+<div class="user-info text-center">
+
+Welcome {{$ctrl.menuItem.firstName}} {{$ctrl.menuItem.lastName}}!<br>
+
+You'll get a message to your email {{$ctrl.menuItem.email}} soon!
+</div>
+      <div class="menu-item-photo">
+        <div>{{$ctrl.menuItem.dish.short_name}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{$ctrl.basePath}}/images/{{$ctrl.menuItem.dish.short_name}}.jpg" alt="{{$ctrl.menuItem.dish.name}}">
+      </div>
+      <div class="menu-item-price text-center ">{{$ctrl.menuItem.dish.price_small | currency}}<span> {{$ctrl.menuItem.dish.small_portion_name}}</span> {{$ctrl.menuItem.dish.price_large | currency}} <span>{{$ctrl.menuItem.dish.large_portion_name}}</span></div>
+    </div>
+    <div class="menu-item-description col-sm-4">
+      <h3 class="menu-item-title">{{$ctrl.menuItem.dish.name}}</h3>
+      <p class="menu-item-details">{{$ctrl.menuItem.dish.description}}</p>
+    </div>
+  </div>
+  <hr class="visible-xs">
+
+  <div ng-show="!$ctrl.menuItem" class="container text-center">
+Not Signed Up Yet. <br>
+
+<button ui-sref="public.signUp"> Sign up Now! </button>
+  </div>
